@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertionSort", "InsertionSort\InsertionSort.csproj", "{267F3F18-6C61-4084-ABBE-1D0F4535C5D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergeSort", "MergeSort\MergeSort.csproj", "{B4745E02-F9FA-4A28-9174-E8B4EA8E6D45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxSubArray", "MaxSubArray\MaxSubArray.csproj", "{45E614A3-214E-4D83-9D97-263607BFD849}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{267F3F18-6C61-4084-ABBE-1D0F4535C5D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{267F3F18-6C61-4084-ABBE-1D0F4535C5D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{267F3F18-6C61-4084-ABBE-1D0F4535C5D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4745E02-F9FA-4A28-9174-E8B4EA8E6D45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4745E02-F9FA-4A28-9174-E8B4EA8E6D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4745E02-F9FA-4A28-9174-E8B4EA8E6D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4745E02-F9FA-4A28-9174-E8B4EA8E6D45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45E614A3-214E-4D83-9D97-263607BFD849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45E614A3-214E-4D83-9D97-263607BFD849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45E614A3-214E-4D83-9D97-263607BFD849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45E614A3-214E-4D83-9D97-263607BFD849}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
