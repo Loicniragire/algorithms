@@ -99,7 +99,8 @@ public static class Merge
             int q = (p + r) / 2;
             Sort(array, p, q);
             Sort(array, q + 1, r);
-            MergeLeftAndRight(array, p, q, r);
+			MergeLeftAndRightWithoutSentinel(array, p, q, r);
+            /* MergeLeftAndRight(array, p, q, r); */
         }
     }
 
@@ -107,27 +108,86 @@ public static class Merge
     {
         int n1 = q - p + 1;
         int n2 = r - q;
+
+        // create left and right arrays. Add 1 to the length of the arrays to add sentinel values
         int[] L = new int[n1 + 1];
         int[] R = new int[n2 + 1];
-        for (int i = 0; i < n1; i++)
-            L[i] = array[p + i];
-        for (int j = 0; j < n2; j++)
-            R[j] = array[q + 1 + j];
+
+        // copy the left and right arrays into L and R
+        for (int x = 0; x < n1; x++)
+            L[x] = array[p + x];
+        for (int y = 0; y < n2; y++)
+            R[y] = array[q + 1 + y];
+
+        // add sentinel values to the end of the arrays
         L[n1] = int.MaxValue;
         R[n2] = int.MaxValue;
-        int iIndex = 0, jIndex = 0;
+
+
+        int i = 0;
+           int j = 0;
         for (int k = p; k <= r; k++)
         {
-            if (L[iIndex] <= R[jIndex])
+            if (L[i] <= R[j])
             {
-                array[k] = L[iIndex];
-                iIndex++;
+                array[k] = L[i];
+                i++;
             }
             else
             {
-                array[k] = R[jIndex];
-                jIndex++;
+                array[k] = R[j];
+                j++;
             }
+        }
+    }
+
+	// This is the same as MergeLeftAndRight but without sentinel values
+	// It stops once either array L or R has had all its elements copied back into the original array. 
+	// Then it copies the remaining elements from the other array into the original array.
+    private static void MergeLeftAndRightWithoutSentinel(int[] array, int p, int q, int r)
+    {
+        int n1 = q - p + 1;
+        int n2 = r - q;
+        int[] L = new int[n1];
+        int[] R = new int[n2];
+
+        for (int x = 0; x < n1; x++)
+            L[x] = array[p + x];
+        for (int y = 0; y < n2; y++)
+            R[y] = array[q + 1 + y];
+
+        int i = 0, j = 0, k = p;
+
+		// Stop when either array L or R has had all its elements copied back into the original array.
+        while (i < n1 && j < n2)
+        {
+            if (L[i] <= R[j])
+            {
+                array[k] = L[i];
+                i++;
+            }
+            else
+            {
+                array[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+
+        // Copy remaining elements of L[], if there are any
+        while (i < n1)
+        {
+            array[k] = L[i];
+            i++;
+            k++;
+        }
+
+        // Copy remaining elements of R[], if there are any
+        while (j < n2)
+        {
+            array[k] = R[j];
+            j++;
+            k++;
         }
     }
 }
