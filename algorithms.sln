@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergeSort", "MergeSort\Merg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxSubArray", "MaxSubArray\MaxSubArray.csproj", "{45E614A3-214E-4D83-9D97-263607BFD849}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareMatrixMultiply", "SquareMatrixMultiply\SquareMatrixMultiply.csproj", "{FABF6FA1-E755-4E71-BE09-955477405A67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{45E614A3-214E-4D83-9D97-263607BFD849}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45E614A3-214E-4D83-9D97-263607BFD849}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45E614A3-214E-4D83-9D97-263607BFD849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FABF6FA1-E755-4E71-BE09-955477405A67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FABF6FA1-E755-4E71-BE09-955477405A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FABF6FA1-E755-4E71-BE09-955477405A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FABF6FA1-E755-4E71-BE09-955477405A67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
