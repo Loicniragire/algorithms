@@ -111,12 +111,20 @@ public static class SubArray
         int leftSum = int.MinValue;
         int sum = 0;
         int maxLeft = 0;
+
+		// Find the maximum subarray of the left half. 
+		// By starting from the midpoint and going to the left.
         for (int i = mid; i >= low; i--)
         {
+			// Calculate the sum of the subarray.
             sum += A[i];
+
+			// If the sum is greater than the leftSum, then update the leftSum and the maxLeft.
             if (sum > leftSum)
             {
                 leftSum = sum;
+
+				// Update the maxLeft to the current index.
                 maxLeft = i;
             }
         }
@@ -124,6 +132,8 @@ public static class SubArray
         int rightSum = int.MinValue;
         sum = 0;
         int maxRight = 0;
+
+		// Find the maximum subarray of the right half.
         for (int j = mid + 1; j <= high; j++)
         {
             sum += A[j];

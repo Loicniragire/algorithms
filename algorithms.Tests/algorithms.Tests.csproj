@@ -18,5 +18,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MergeSort\MergeSort.csproj" />
+    <ProjectReference Include="..\MaxSubArray\MaxSubArray.csproj" />
   </ItemGroup>
 </Project>
