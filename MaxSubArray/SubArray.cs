@@ -106,25 +106,67 @@ public static class SubArray
         }
     }
 
+	// Kadane's algorithm
+	// Time Complexity: O(n)
+	// Space Complexity: O(1)
+	// The maximum subarray problem can also be solved using the Kadane's algorithm.
+	// The algorithm calculates the maximum subarray of the entire array in O(n) time.
+    public static (int, int, int) FindMaximumSubarrayLinear(int[] A)
+    {
+        int maxSoFar = A[0];
+        int maxEndingHere = A[0];
+        int start = 0;
+        int end = 0;
+        int temporaryStart = 0;
+
+		// Loop through the array and calculate the maximum subarray.
+        for (int i = 1; i < A.Length; i++)
+        {
+
+			// If the current element is greater than the sum of the maximum subarray 
+			// and the current element, then update the maximum subarray.
+            if (A[i] > maxEndingHere + A[i])
+            {
+                maxEndingHere = A[i];
+                temporaryStart = i;
+            }
+			// Otherwise, add the current element to the maximum subarray.
+            else
+            {
+                maxEndingHere += A[i];
+            }
+
+			// If the maximum subarray is greater than the maximum so far, 
+			// then update the maximum so far.
+            if (maxEndingHere > maxSoFar)
+            {
+                maxSoFar = maxEndingHere;
+                start = temporaryStart;
+                end = i;
+            }
+        }
+        return (start, end, maxSoFar);
+    }
+
     private static (int, int, int) FindMaxCrossingSubarray(int[] A, int low, int mid, int high)
     {
         int leftSum = int.MinValue;
         int sum = 0;
         int maxLeft = 0;
 
-		// Find the maximum subarray of the left half. 
-		// By starting from the midpoint and going to the left.
+        // Find the maximum subarray of the left half. 
+        // By starting from the midpoint and going to the left.
         for (int i = mid; i >= low; i--)
         {
-			// Calculate the sum of the subarray.
+            // Calculate the sum of the subarray.
             sum += A[i];
 
-			// If the sum is greater than the leftSum, then update the leftSum and the maxLeft.
+            // If the sum is greater than the leftSum, then update the leftSum and the maxLeft.
             if (sum > leftSum)
             {
                 leftSum = sum;
 
-				// Update the maxLeft to the current index.
+                // Update the maxLeft to the current index.
                 maxLeft = i;
             }
         }
@@ -133,7 +175,7 @@ public static class SubArray
         sum = 0;
         int maxRight = 0;
 
-		// Find the maximum subarray of the right half.
+        // Find the maximum subarray of the right half.
         for (int j = mid + 1; j <= high; j++)
         {
             sum += A[j];

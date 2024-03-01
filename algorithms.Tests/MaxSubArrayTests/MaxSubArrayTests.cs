@@ -12,7 +12,8 @@ namespace Algorithms.Tests
 			var expected = (3, 6, 6);
 
             // Act
-            var result = SubArray.FindMaximumSubarray(input, 0, input.Length - 1);
+			var result = SubArray.FindMaximumSubarrayLinear(input);
+            /* var result = SubArray.FindMaximumSubarray(input, 0, input.Length - 1); */
 
             // Assert
             Assert.That(result, Is.EqualTo(expected));
